@@ -12,6 +12,7 @@ Este programa permite crear un organigrama a partir de la información contenida
 1. Clona o descarga este repositorio en tu computadora.
 2. Abre una terminal en la carpeta raíz del repositorio.
 3. Ejecuta el siguiente comando para instalar las dependencias: "npm install"
+4. Ejecuta el siguiente comando correr el programa: "npm run dev"
 
 ## Uso
 
@@ -19,7 +20,7 @@ Este programa permite crear un organigrama a partir de la información contenida
 2. Dele Click en "Crear Organigrama"
 3. Seleccione el MES que desea ver
 
-# Dependencias
+## Dependencias
 Este proyecto utiliza las siguientes bibliotecas de terceros:
 
 1. React
