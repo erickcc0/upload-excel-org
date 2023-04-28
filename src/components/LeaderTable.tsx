@@ -20,45 +20,36 @@ export function LeaderTable({
   };
 
   return (
-    <table className="table-auto text-xs w-full bg-primary-2 rounded py-2">
-      <thead>
-        <tr>
-          <th>Foto</th>
-          <th>Nombre</th>
-          <th>Área</th>
-          <th>Sueldo Bruto</th>
-          <th>Fecha de ingreso</th>
-          <th>Nivel Jerárquico</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            {picture ? (
-              <img
-                src={picture}
-                alt={register.Nombre}
-                className="w-20 block m-auto"
-              />
-            ) : (
-              <input
-                type="file"
-                accept="image/*"
-                onChange={onChange}
-                className="w-20 block"
-                title="Agregar foto de perfil"
-              />
-            )}
-          </td>
-          <td>{register.Nombre}</td>
-          <td>{register.Area}</td>
-          <td>{Number(register['Sueldo bruto']).toLocaleString('es')}</td>
-          <td className={isNew ? 'font-bold text-cyan' : undefined}>
-            {formatter.format(register['Fecha de ingreso'])}
-          </td>
-          <td>{register['Nivel Jerárquico']}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div className="grid grid-cols-2 gap-2 bg-lime-100 rounded p-2 shadow-md text-xs">
+      <div className="flex items-center">
+        {picture ? (
+          <img
+            src={picture}
+            alt={register.Nombre}
+            className="w-20 rounded-full mr-2"
+          />
+        ) : (
+          <input
+            type="file"
+            accept="image/*"
+            onChange={onChange}
+            className="w-20 block mr-2"
+            title="Agregar foto de perfil"
+          />
+        )}
+        <div>
+          <h2 className="text-lg font-semibold">{register.Nombre}</h2>
+          <p className="text-gray-500">{register.Area}</p>
+        </div>
+      </div>
+      <div className="flex flex-col items-end ">
+        <p className="text-gray-500 mb-2">Nivel Jerárquico</p>
+        <p className="text-lg font-semibold mb-1">{register['Nivel Jerárquico']}</p>
+        <p className="text-gray-500 mb-2">Sueldo Bruto</p>
+        <p className="text-lg font-semibold mb-1">{Number(register['Sueldo bruto']).toLocaleString('es')}</p>
+        <p className="text-gray-500 mb-2">Fecha de ingreso</p>
+        <p className={isNew ? 'font-bold text-cyan text-lg' : 'text-lg'}>{formatter.format(register['Fecha de ingreso'])}</p>
+      </div>
+    </div>
   );
 }

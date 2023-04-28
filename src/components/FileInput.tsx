@@ -8,6 +8,7 @@ export function FileInput({
 }: {
   setData: Dispatch<SetStateAction<Register[] | null>>;
 }) {
+
   const readUploadFile = (e: ChangeEvent<HTMLInputElement>) => {
     /*  const xlsx = await importerFactory.from('./my-awesome-books.xlsx');
   const books: Array<Book> = xlsx.getAllItems<Book>(config.books); */
@@ -44,8 +45,9 @@ export function FileInput({
   };
 
   return (
-    <div>
-      <input type="file" onChange={readUploadFile} />
+    <div className="fixed inset-0 flex items-center justify-center">
+      <label className="p-4 text-1 font-bold">EXCEL</label>
+      <input className="text-1 font-bold" type="file" onChange={readUploadFile} />
     </div>
   );
 }
