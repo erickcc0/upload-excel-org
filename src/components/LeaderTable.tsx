@@ -1,16 +1,19 @@
 import { ChangeEvent, useState } from 'react';
 import { Register } from '../models';
+import { Header } from '../models/Header';
 
 export function LeaderTable({
   register,
-  month
+
+  headers
 }: {
   register: Register;
   month: number;
+  headers: Header;
 }) {
+  
   const [picture, setPicture] = useState<string>();
   const formatter = new Intl.DateTimeFormat('es', {});
-  const isNew = month === register['Fecha de ingreso'].getMonth();
 
   const onChange = (event: ChangeEvent<HTMLInputElement>) => {
     const files = event.currentTarget.files;
@@ -39,16 +42,25 @@ export function LeaderTable({
         )}
         <div>
           <h2 className="text-lg font-semibold">{register.Nombre}</h2>
-          <p className="text-gray-500">{register.Area}</p>
+          <p className="text-gray-500 mb-2">{headers['Area']}</p>
+          <p className="text-base text-sm font-semibold mb-2">{register.Area}</p>
+          <p className="text-gray-500 mb-2">{headers['Subarea']}</p>
+          <p className="text-base font-semibold text-sm">{register.Subarea}</p>
         </div>
       </div>
       <div className="flex flex-col items-end ">
-        <p className="text-gray-500 mb-2">Nivel Jerárquico</p>
-        <p className="text-lg font-semibold mb-1">{register['Nivel Jerárquico']}</p>
-        <p className="text-gray-500 mb-2">Sueldo Bruto</p>
-        <p className="text-lg font-semibold mb-1">{Number(register['Sueldo bruto']).toLocaleString('es')}</p>
-        <p className="text-gray-500 mb-2">Fecha de ingreso</p>
-        <p className={isNew ? 'font-bold text-cyan text-lg' : 'text-lg'}>{formatter.format(register['Fecha de ingreso'])}</p>
+        <p className="text-gray-500 mb-2">{headers['Nivel Jerárquico']}</p>
+        <p className="text-base font-semibold mb-1">
+          {register['Nivel Jerárquico']}
+        </p>
+        <p className="text-gray-500 mb-2">{headers['Sueldo Bruto']}</p>
+        <p className="text-base font-semibold mb-1">
+          {Number(register['Sueldo bruto']).toLocaleString('es')}
+        </p>
+        <p className="text-gray-500 mb-2">{headers['Fecha de Ingreso']}</p>
+        <p className={'text-base'}>
+          {formatter.format(register['Fecha de ingreso'])}
+        </p>
       </div>
     </div>
   );

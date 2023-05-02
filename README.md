@@ -16,9 +16,12 @@ Este programa permite crear un organigrama a partir de la información contenida
 
 ## Uso
 
-1. Suba el archivo excel de prueba, vera una tabla con su archivo
-2. Dele Click en "Crear Organigrama"
-3. Seleccione el MES que desea ver
+1. Apriete el boton 'Choose File', y suba el archivo excel del listado de los pagos mensuales que se proporciono.
+2. Se creara una previsualizacion en la que podra editar la cabezera de la columna.
+3. Para poder editar solo de doble click a la cabezera de la columna que desee editar, cuando termine solo salga del editor.
+4. Dele Click en "Crear Organigrama" y se creara un organigrama personalizado, en el tendra la opcion de cambiar por mes el organigrama.
+5. Vera en cada item un boton en el que puede subir la foto del trabajador.
+6. Para imprimir su organigrama solo apriete en el boton "Imprimir".
 
 ## Dependencias
 Este proyecto utiliza las siguientes bibliotecas de terceros:

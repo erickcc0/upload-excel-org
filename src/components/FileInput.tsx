@@ -46,7 +46,7 @@ export function FileInput({
 
   return (
     <div className="fixed inset-0 flex items-center justify-center">
-      <label className="p-4 text-1 font-bold">EXCEL</label>
+      <label className="p-4 text-1 font-bold">SUBA SU ARCHIVO EXCEL</label>
       <input className="text-1 font-bold" type="file" onChange={readUploadFile} />
     </div>
   );
