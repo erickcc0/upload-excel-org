@@ -41,7 +41,7 @@ export function LeaderTable({
           />
         )}
         <div>
-          <h2 className="text-lg font-semibold">{register.Nombre}</h2>
+          <h2 className="text-lg font-bold">{register.Nombre}</h2>
           <p className="text-gray-500 mb-2">{headers['Area']}</p>
           <p className="text-base text-sm font-semibold mb-2">{register.Area}</p>
           <p className="text-gray-500 mb-2">{headers['Subarea']}</p>

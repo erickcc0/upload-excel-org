@@ -38,7 +38,7 @@ export function EmployeeTable({
           />
         )}
         <div>
-          <h2 className="text-base font-semibold">{register.Nombre}</h2>
+          <h2 className="text-base font-bold">{register.Nombre}</h2>
           <p className="text-gray-500 mb-2">{headers['Area']}</p>
           <p className="text-base text-sm font-semibold mb-2">{register.Area}</p>
           <p className="text-gray-500 mb-2">{headers['Subarea']}</p>
